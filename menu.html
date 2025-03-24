@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Canteen</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Canteen</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html" class="active">Menu</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <!-- Menu Header -->
+    <header class="menu-header">
+        <h1>Our Menu</h1>
+    </header>
+
+    <!-- Menu Section -->
+    <section class="menu-container">
+        <div class="menu-items">
+
+            <!-- Menu Item 1 -->
+            <div class="menu-card">
+                <img src="images/tea.jpg" alt="Tea">
+                <div class="menu-details">
+                    <h3>Tea</h3>
+                    <p>Refreshing hot tea.</p>
+                    <p class="menu-price">₹10</p>
+                    <div class="button-group">
+                        <button class="cart-btn" onclick="addToCart('Tea', 10)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Item 2 -->
+            <div class="menu-card">
+                <img src="images/coffee.jpg" alt="Coffee">
+                <div class="menu-details">
+                    <h3>Coffee</h3>
+                    <p>Strong and fresh coffee.</p>
+                    <p class="menu-price">₹15</p>
+                    <div class="button-group">
+                        <button class="cart-btn" onclick="addToCart('Coffee', 15)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Item 3 -->
+            <div class="menu-card">
+                <img src="images/biryani.jpg" alt="Biryani">
+                <div class="menu-details">
+                    <h3>Biryani</h3>
+                    <p>Delicious, spicy biryani.</p>
+                    <p class="menu-price">₹80</p>
+                    <div class="button-group">
+                        <button class="cart-btn" onclick="addToCart('Biryani', 80)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Item 4 -->
+            <div class="menu-card">
+                <img src="images/rice.jpg" alt="Rice">
+                <div class="menu-details">
+                    <h3>Rice</h3>
+                    <p>Steamed rice with curry.</p>
+                    <p class="menu-price">₹50</p>
+                    <div class="button-group">
+                        <button class="cart-btn" onclick="addToCart('Rice', 50)">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section class="cart-container">
+        <h2>Your Cart</h2>
+        <ul id="cart-list"></ul>
+        <p><strong>Total: ₹<span id="cart-total">0</span></strong></p>
+        <button id="checkout-btn" onclick="checkout()" style="display: none;">Proceed to Checkout</button>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
