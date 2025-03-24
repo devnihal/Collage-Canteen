@@ -10,11 +10,12 @@
 
     <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="logo">Canteen</div>
+        <div class="logo">LBS Canteen</div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html" class="active">Menu</a></li>
             <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
@@ -22,65 +23,107 @@
     <header class="menu-header">
         <h1>Our Menu</h1>
     </header>
+<!-- Menu Section -->
+<section class="menu-container">
 
-    <!-- Menu Section -->
-    <section class="menu-container">
-        <div class="menu-items">
-
-            <!-- Menu Item 1 -->
-            <div class="menu-card">
-                <img src="images/tea.jpg" alt="Tea">
-                <div class="menu-details">
-                    <h3>Tea</h3>
-                    <p>Refreshing hot tea.</p>
-                    <p class="menu-price">₹10</p>
-                    <div class="button-group">
-                        <button class="cart-btn" onclick="addToCart('Tea', 10)">Add to Cart</button>
-                    </div>
-                </div>
+    <!-- Beverages Section -->
+    <h2 class="menu-title">Beverages</h2>
+    <div class="menu-items">
+        <div class="menu-card">
+            <img src="images/tea.jpg" alt="Tea">
+            <div class="menu-details">
+                <h3 class="menusubt">Tea</h3>
+                <p>Refreshing hot tea.</p>
+                <p class="menu-price">₹10</p>
+                <p class="menu-price">Queue:<span id="mnitm001">00</span></p>
+                <button class="cart-btn" onclick="addToCart('Tea', 10)">Add to Cart &#128722</button>
             </div>
-
-            <!-- Menu Item 2 -->
-            <div class="menu-card">
-                <img src="images/coffee.jpg" alt="Coffee">
-                <div class="menu-details">
-                    <h3>Coffee</h3>
-                    <p>Strong and fresh coffee.</p>
-                    <p class="menu-price">₹15</p>
-                    <div class="button-group">
-                        <button class="cart-btn" onclick="addToCart('Coffee', 15)">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Menu Item 3 -->
-            <div class="menu-card">
-                <img src="images/biryani.jpg" alt="Biryani">
-                <div class="menu-details">
-                    <h3>Biryani</h3>
-                    <p>Delicious, spicy biryani.</p>
-                    <p class="menu-price">₹80</p>
-                    <div class="button-group">
-                        <button class="cart-btn" onclick="addToCart('Biryani', 80)">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Menu Item 4 -->
-            <div class="menu-card">
-                <img src="images/rice.jpg" alt="Rice">
-                <div class="menu-details">
-                    <h3>Rice</h3>
-                    <p>Steamed rice with curry.</p>
-                    <p class="menu-price">₹50</p>
-                    <div class="button-group">
-                        <button class="cart-btn" onclick="addToCart('Rice', 50)">Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </section>
+
+        <div class="menu-card">
+            <img src="images/coffee.jpg" alt="Coffee">
+            <div class="menu-details">
+                <h3 class="menusubt">Coffee</h3>
+                <p>Strong and fresh coffee.</p>
+                <p class="menu-price">₹15</p>
+                <p class="menu-price">Queue:<span id="mnitm002">00</span></p>
+                <button class="cart-btn" onclick="addToCart('Coffee', 15)">Add to Cart &#128722</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Course Section -->
+    <h2 class="menu-title">Main Course</h2>
+    <div class="menu-items">
+        <div class="menu-card">
+            <img src="images/biryani.jpg" alt="Biryani">
+            <div class="menu-details">
+                <h3 class="menusubt">Chicken Biryani</h3>
+                <p>Delicious, Chicken biryani.</p>
+                <p class="menu-price">₹80</p>
+                <p class="menu-price">Queue:<span id="mnitm003">00</span></p>
+                <button class="cart-btn" onclick="addToCart('Chicken Biryani', 80)">Add to Cart &#128722</button>
+            </div>
+        </div>
+        <div class="menu-card">
+            <img src="images/egg-biryani.jpg" alt="Biryani">
+            <div class="menu-details">
+                <h3 class="menusubt">Egg Biryani</h3>
+                <p>Delicious, Egg biryani.</p>
+                <p class="menu-price">₹80</p>
+                <p class="menu-price">Queue:<span id="mnitm004">00</span></p>
+                <button class="cart-btn" onclick="addToCart('Egg Biryani', 80)">Add to Cart &#128722</button>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <img src="images/rice.jpg" alt="Rice">
+            <div class="menu-details">
+                <h3 class="menusubt">Rice</h3>
+                <p>Steamed rice with curry.</p>
+                <p class="menu-price">₹50</p>
+                <p class="menu-price">Queue:<span id="mnitm005">00</span></p>
+                <button class="cart-btn" onclick="addToCart('Rice', 50)">Add to Cart &#128722</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Snacks Section -->
+    <h2 class="menu-title">Snacks</h2>
+    <div class="menu-items">
+        <div class="menu-card">
+            <img src="images/pazampori.jpg" alt="pazampori">
+            <div class="menu-details">
+                <h3 class="menusubt">Pazampori</h3>
+                <p>Crispy Pazampori</p>
+                <p class="menu-price">₹10</p>
+                <p class="menu-price">Queue:<span id="mnitm006">00</span></p>
+                <button class="cart-btn" onclick="addToCart('Pazampori', 10)">Add to Cart &#128722</button>
+            </div>
+        </div>
+        <div class="menu-card">
+            <img src="images/bread-fry.jpg" alt="bread fry">
+            <div class="menu-details">
+                <h3 class="menusubt">Bread Fry</h3>
+                <p>Delicious, Bread Fry</p>
+                <p class="menu-price">₹10</p>
+                <p class="menu-price">Queue:<span id="mnitm007">00</span></p>
+                <button class="cart-btn" onclick="addToCart('Bread Fry', 10)">Add to Cart &#128722</button>
+            </div>
+        </div>
+
+        <div class="menu-card">
+            <img src="images/vada.jpg" alt="Rice">
+            <div class="menu-details">
+                <h3 class="menusubt">Vada</h3>
+                <p>Super Delicious Vada</p>
+                <p class="menu-price">₹15</p>
+                <p class="menu-price">Queue:<span id="mnitm008">00</span></p>
+                <button class="cart-btn" onclick="addToCart('Vada', 15)">Add to Cart &#128722</button>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Cart Section -->
     <section class="cart-container">
@@ -89,7 +132,13 @@
         <p><strong>Total: ₹<span id="cart-total">0</span></strong></p>
         <button id="checkout-btn" onclick="checkout()" style="display: none;">Proceed to Checkout</button>
     </section>
-
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            loadCart();
+            startQueueSystem();
+            //updateCanteenStatus();
+        });
+    </script>
     <script src="script.js"></script>
 
 </body>

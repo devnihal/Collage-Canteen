@@ -10,6 +10,7 @@ function loadCheckout() {
 
     cart.forEach(item => {
         let li = document.createElement("li");
+        li.classList.add("cart-list-item");
         li.innerHTML = `${item.name} x${item.quantity} - ₹${item.price * item.quantity}`;
         checkoutList.appendChild(li);
         total += item.price * item.quantity;
@@ -39,40 +40,71 @@ function generateBill(name, roll, total) {
     let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
     let canvas = document.createElement("canvas");
     let ctx = canvas.getContext("2d");
-
+    let OrderId = Date.now();
     canvas.width = 400;
-    canvas.height = 300 + cart.length * 30;
+    canvas.height = 350 + cart.length * 30;
 
     // Background
     ctx.fillStyle = "white";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+    // Header
     ctx.fillStyle = "black";
     ctx.font = "18px Arial";
     ctx.fillText("Canteen Bill", 140, 30);
     ctx.font = "14px Arial";
     ctx.fillText(`Name: ${name}`, 20, 60);
-    ctx.fillText(`Roll No: ${roll}`, 20, 90);
-    ctx.fillText(`Date: ${new Date().toLocaleDateString()}`, 20, 120);
+    ctx.fillText(`Admission No: ${roll}`, 20, 90);
+    ctx.fillText(`Date: ${new Date().toLocaleDateString()}`, 20, 110);
+    ctx.fillText(`Order ID: #${OrderId}`, 20, 140);
 
-    ctx.fillText("Items:", 20, 160);
-    let y = 190;
+    // Table Headers
+    let y = 180;
+    ctx.font = "14px Arial";
+    ctx.fillText("Item", 20, y);
+    ctx.fillText("Qty", 140, y);
+    ctx.fillText("Price", 200, y);
+    ctx.fillText("Total", 300, y);
+    ctx.fillRect(20, y + 5, 340, 2); // Line under headers
+
+    // Table Content
+    y += 30;
     cart.forEach(item => {
-        ctx.fillText(`${item.name} x${item.quantity} - ₹${item.price * item.quantity}`, 40, y);
+        let itemTotal = item.price * item.quantity;
+        ctx.fillText(`${item.name}`, 20, y);
+        ctx.fillText(`x${item.quantity}`, 140, y);
+        ctx.fillText(`₹${item.price}`, 200, y);
+        ctx.fillText(`₹${itemTotal}`, 320, y); // Right-align total price
         y += 30;
     });
 
-    ctx.fillText(`Total: ₹${total}`, 20, y + 20);
+    // Grand Total on the Right Side
+    ctx.fillRect(20, y - 10, 340, 2); // Line above total
+    ctx.fillText(`Total:`, 20, y + 20);
+    ctx.fillText(`₹${total}`, 320, y + 20); // Right-aligned total amount
 
-    // Convert to Image & Download
-    let billImage = canvas.toDataURL("image/png");
-    let link = document.createElement("a");
-    link.href = billImage;
-    link.download = "Canteen_Bill.png";
-    link.click();
+    // Load and add logo without rotation (Rubber stamp style)
+    let logo = new Image();
+    logo.src = "images/logo.png";
+    logo.onload = function () {
+        let logoWidth = 180;
+        let logoHeight = 50;
+        let xPos = (canvas.width - logoWidth) / 2;
+        let yPos = canvas.height - logoHeight - 20;
+        ctx.globalAlpha = 0.25; // Slight opacity for a stamp effect
+        ctx.drawImage(logo, xPos, yPos, logoWidth, logoHeight);
+        ctx.globalAlpha = 1;
 
-    // Clear cart after download
-    sessionStorage.removeItem("cart");
-    alert("Order Placed! Bill downloaded.");
-    window.location.href = "menu.html";
+        // Convert to Image & Download
+        let billImage = canvas.toDataURL("image/png");
+        let link = document.createElement("a");
+        link.href = billImage;
+        link.download = `Canteen_Bill_${OrderId}.png`;
+        link.click();
+
+        // Clear cart after download
+        sessionStorage.removeItem("cart");
+        alert("Order Placed! Bill downloaded.");
+        window.location.href = "menu.html";
+    };
 }
