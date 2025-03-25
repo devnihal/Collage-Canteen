@@ -8,16 +8,22 @@
 </head>
 <body>
 
-<!-- Navigation Bar -->
-<nav class="navbar">
-    <div class="logo">LBS Canteen</div>
-    <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">LBS Canteen</div>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
 
     <!-- Hero Section -->
     <header class="hero">
@@ -27,6 +33,25 @@
             <a href="menu.html" class="view-menu-btn">View Menu</a>
         </div>
     </header>
-
+<script>
+    function toggleMenu() {
+        let menu = document.querySelector(".nav-links");
+        let icon = document.querySelector(".menu-icon");
+        
+        menu.classList.toggle("show");
+        icon.classList.toggle("active");
+    }
+    
+    // Close menu when clicking outside
+    document.addEventListener("click", function (event) {
+        let menu = document.querySelector(".nav-links");
+        let icon = document.querySelector(".menu-icon");
+    
+        if (!menu.contains(event.target) && !icon.contains(event.target)) {
+            menu.classList.remove("show");
+            icon.classList.remove("active");
+        }
+    });
+</script>
 </body>
 </html>

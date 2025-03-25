@@ -8,17 +8,21 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="logo">LBS Canteen</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="logo">LBS Canteen</div>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
     <!-- Menu Header -->
     <header class="menu-header">
         <h1>Our Menu</h1>
@@ -132,14 +136,31 @@
         <p><strong>Total: ₹<span id="cart-total">0</span></strong></p>
         <button id="checkout-btn" onclick="checkout()" style="display: none;">Proceed to Checkout</button>
     </section>
+    <script src="script.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             loadCart();
             startQueueSystem();
-            //updateCanteenStatus();
+            updateCanteenStatus();
+        });
+        function toggleMenu() {
+            let menu = document.querySelector(".nav-links");
+            let icon = document.querySelector(".menu-icon");
+            
+            menu.classList.toggle("show");
+            icon.classList.toggle("active");
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener("click", function (event) {
+            let menu = document.querySelector(".nav-links");
+            let icon = document.querySelector(".menu-icon");
+        
+            if (!menu.contains(event.target) && !icon.contains(event.target)) {
+                menu.classList.remove("show");
+                icon.classList.remove("active");
+            }
         });
     </script>
-    <script src="script.js"></script>
-
 </body>
 </html>

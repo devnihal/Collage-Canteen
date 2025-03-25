@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - LBS Canteen</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="logo">LBS Canteen</div>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+    <!-- Contact Section -->
+    <section class="contact-container">
+        <h2 style="margin-top: 70px;text-align:center;font-size:38px">Contact Us</h2>
+
+        <div class="contact-wrapper">
+            <!-- Left Side: Contact Info + Working Hours (Stacked Vertically) -->
+            <div class="contact-left">
+                <div class="contact-card">
+                    <h3>📍 Get in Touch</h3>
+                    <p><strong>Location:</strong> LBS College Canteen, Kasaragod</p>
+                    <p><strong>Phone:</strong> +91 98765 43210</p>
+                    <p><strong>Email:</strong> canteen@lbsck.edu.in</p>
+                </div>
+
+                <div class="contact-card">
+                    <h3>⏰ Working Hours</h3>
+                    <ul class="unul">
+                        <li><strong>Monday - Friday:</strong> 9:00 AM - 5:00 PM</li>
+                        <li><strong>Saturday:</strong> 9:00 AM - 3:00 PM</li>
+                        <li><strong>Sunday:</strong> Closed</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Side: Contact Form -->
+            <div class="contact-right">
+                <h3>📩 Send Us a Message</h3>
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" style="resize:none" rows="4" required></textarea>
+                    <button type="submit" >Send Message</button>
+                </form>
+            </div>
+        </div>
+
+    </section>
+    <script>
+        function toggleMenu() {
+            let menu = document.querySelector(".nav-links");
+            let icon = document.querySelector(".menu-icon");
+            
+            menu.classList.toggle("show");
+            icon.classList.toggle("active");
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener("click", function (event) {
+            let menu = document.querySelector(".nav-links");
+            let icon = document.querySelector(".menu-icon");
+        
+            if (!menu.contains(event.target) && !icon.contains(event.target)) {
+                menu.classList.remove("show");
+                icon.classList.remove("active");
+            }
+        });
+    </script>
+</body>
+</html>

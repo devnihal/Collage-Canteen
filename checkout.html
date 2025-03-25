@@ -8,24 +8,30 @@
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="logo">Canteen</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-        </ul>
-    </nav>
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="logo">LBS Canteen</div>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
 
     <!-- Checkout Header -->
     <header class="checkout-header">
-        <h1>Checkout</h1>
+        <h1 style="margin-top: 70px;text-align:center;">Checkout</h1>
     </header>
 
     <!-- Cart Summary -->
     <section class="checkout-container">
-        <h2>Order Summary</h2>
+        <h2 style="color:black">Order Summary</h2>
         <ul id="checkout-list"></ul>
         <p><strong>Total: ₹<span id="checkout-total">0</span></strong></p>
 
@@ -41,6 +47,25 @@
     </section>
 
     <script src="checkout.js"></script>
-
+    <script>
+        function toggleMenu() {
+            let menu = document.querySelector(".nav-links");
+            let icon = document.querySelector(".menu-icon");
+            
+            menu.classList.toggle("show");
+            icon.classList.toggle("active");
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener("click", function (event) {
+            let menu = document.querySelector(".nav-links");
+            let icon = document.querySelector(".menu-icon");
+        
+            if (!menu.contains(event.target) && !icon.contains(event.target)) {
+                menu.classList.remove("show");
+                icon.classList.remove("active");
+            }
+        });
+    </script>
 </body>
 </html>
