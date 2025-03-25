@@ -65,7 +65,7 @@ function generateBill(name, roll, total) {
     ctx.fillText("Qty", 140, y);
     ctx.fillText("Price", 200, y);
     ctx.fillText("Total", 300, y);
-    ctx.fillRect(20, y + 5, 340, 2); // Line under headers
+    ctx.fillRect(20, y + 5, 340, 1); // Line under headers
 
     // Table Content
     y += 30;
@@ -79,7 +79,7 @@ function generateBill(name, roll, total) {
     });
 
     // Grand Total on the Right Side
-    ctx.fillRect(20, y - 10, 340, 2); // Line above total
+    ctx.fillRect(20, y - 10, 340, 1); // Line above total
     ctx.fillText(`Total:`, 20, y + 20);
     ctx.fillText(`₹${total}`, 320, y + 20); // Right-aligned total amount
 
