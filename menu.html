@@ -39,8 +39,8 @@
                 <h3 class="menusubt">Tea</h3>
                 <p>Refreshing hot tea.</p>
                 <p class="menu-price">₹10</p>
-                <p class="menu-price">Queue:<span id="mnitm001">00</span></p>
-                <button class="cart-btn" onclick="addToCart('Tea', 10)">Add to Cart &#128722</button>
+                <p class="menu-price beverages">Queue:<span id="mnitm001">00</span></p>
+                <button class="cart-btn btnbeverages" onclick="addToCart('Tea', 10)">Add to Cart &#128722</button>
             </div>
         </div>
 
@@ -50,14 +50,37 @@
                 <h3 class="menusubt">Coffee</h3>
                 <p>Strong and fresh coffee.</p>
                 <p class="menu-price">₹15</p>
-                <p class="menu-price">Queue:<span id="mnitm002">00</span></p>
-                <button class="cart-btn" onclick="addToCart('Coffee', 15)">Add to Cart &#128722</button>
+                <p class="menu-price beverages">Queue:<span id="mnitm002">00</span></p>
+                <button class="cart-btn btnbeverages" onclick="addToCart('Coffee', 15)">Add to Cart &#128722</button>
             </div>
         </div>
     </div>
-
+    <!-- Breakfast Section -->
+    <h2 class="menu-title">Breakfast</h2>
+    <div class="menu-items">
+        <div class="menu-card">
+            <img src="images/dosa.png" alt="Biryani">
+            <div class="menu-details">
+                <h3 class="menusubt">Dosa</h3>
+                <p>Crispy, Hot Dosa</p>
+                <p class="menu-price">₹10</p>
+                <p class="menu-price breakfast">Queue:<span id="mnitm003">00</span></p>
+                <button class="cart-btn btnbreakfast" onclick="addToCart('Dosa', 10)">Add to Cart &#128722</button>
+            </div>
+        </div>
+        <div class="menu-card">
+            <img src="images/poori.jpg" alt="Biryani">
+            <div class="menu-details">
+                <h3 class="menusubt">Poori</h3>
+                <p>Delicious, Crispy Poori</p>
+                <p class="menu-price">₹10</p>
+                <p class="menu-price breakfast">Queue:<span id="mnitm004">00</span></p>
+                <button class="cart-btn btnbreakfast" onclick="addToCart('poori', 80)">Add to Cart &#128722</button>
+            </div>
+        </div>
+    </div>
     <!-- Main Course Section -->
-    <h2 class="menu-title">Main Course</h2>
+    <h2 class="menu-title">Lunch</h2>
     <div class="menu-items">
         <div class="menu-card">
             <img src="images/biryani.jpg" alt="Biryani">
@@ -65,8 +88,8 @@
                 <h3 class="menusubt">Chicken Biryani</h3>
                 <p>Delicious, Chicken biryani.</p>
                 <p class="menu-price">₹80</p>
-                <p class="menu-price">Queue:<span id="mnitm003">00</span></p>
-                <button class="cart-btn" onclick="addToCart('Chicken Biryani', 80)">Add to Cart &#128722</button>
+                <p class="menu-price lunch">Queue:<span id="mnitm003">00</span></p>
+                <button class="cart-btn btnlunch" onclick="addToCart('Chicken Biryani', 80)">Add to Cart &#128722</button>
             </div>
         </div>
         <div class="menu-card">
@@ -75,8 +98,8 @@
                 <h3 class="menusubt">Egg Biryani</h3>
                 <p>Delicious, Egg biryani.</p>
                 <p class="menu-price">₹80</p>
-                <p class="menu-price">Queue:<span id="mnitm004">00</span></p>
-                <button class="cart-btn" onclick="addToCart('Egg Biryani', 80)">Add to Cart &#128722</button>
+                <p class="menu-price lunch">Queue:<span id="mnitm004">00</span></p>
+                <button class="cart-btn btnlunch" onclick="addToCart('Egg Biryani', 80)">Add to Cart &#128722</button>
             </div>
         </div>
 
@@ -86,8 +109,8 @@
                 <h3 class="menusubt">Rice</h3>
                 <p>Steamed rice with curry.</p>
                 <p class="menu-price">₹50</p>
-                <p class="menu-price">Queue:<span id="mnitm005">00</span></p>
-                <button class="cart-btn" onclick="addToCart('Rice', 50)">Add to Cart &#128722</button>
+                <p class="menu-price lunch">Queue:<span id="mnitm005">00</span></p>
+                <button class="cart-btn" btnlunch onclick="addToCart('Rice', 50)">Add to Cart &#128722</button>
             </div>
         </div>
     </div>
@@ -101,8 +124,8 @@
                 <h3 class="menusubt">Pazampori</h3>
                 <p>Crispy Pazampori</p>
                 <p class="menu-price">₹10</p>
-                <p class="menu-price">Queue:<span id="mnitm006">00</span></p>
-                <button class="cart-btn" onclick="addToCart('Pazampori', 10)">Add to Cart &#128722</button>
+                <p class="menu-price snacks">Queue:<span id="mnitm006">00</span></p>
+                <button class="cart-btn btnsnacks" onclick="addToCart('Pazampori', 10)">Add to Cart &#128722</button>
             </div>
         </div>
         <div class="menu-card">
@@ -111,8 +134,8 @@
                 <h3 class="menusubt">Bread Fry</h3>
                 <p>Delicious, Bread Fry</p>
                 <p class="menu-price">₹10</p>
-                <p class="menu-price">Queue:<span id="mnitm007">00</span></p>
-                <button class="cart-btn" onclick="addToCart('Bread Fry', 10)">Add to Cart &#128722</button>
+                <p class="menu-price snacks">Queue:<span id="mnitm007">00</span></p>
+                <button class="cart-btn btnsnacks" onclick="addToCart('Bread Fry', 10)">Add to Cart &#128722</button>
             </div>
         </div>
 
@@ -122,8 +145,8 @@
                 <h3 class="menusubt">Vada</h3>
                 <p>Super Delicious Vada</p>
                 <p class="menu-price">₹15</p>
-                <p class="menu-price">Queue:<span id="mnitm008">00</span></p>
-                <button class="cart-btn" onclick="addToCart('Vada', 15)">Add to Cart &#128722</button>
+                <p class="menu-price snacks">Queue:<span id="mnitm008">00</span></p>
+                <button class="cart-btn btnsnacks" onclick="addToCart('Vada', 15)">Add to Cart &#128722</button>
             </div>
         </div>
     </div>
