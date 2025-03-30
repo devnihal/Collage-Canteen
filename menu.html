@@ -88,8 +88,8 @@
                 <h3 class="menusubt">Chicken Biryani</h3>
                 <p>Delicious, Chicken biryani.</p>
                 <p class="menu-price">₹80</p>
-                <p class="menu-price lunch">Queue:<span id="mnitm003">00</span></p>
-                <button class="cart-btn btnlunch" onclick="addToCart('Chicken Biryani', 80)">Add to Cart &#128722</button>
+                <p class="menu-price lunch">Queue:<span id="mnitm005" class="unvl">00</span></p>
+                <button class="cart-btn btnlunch unavailable" onclick="addToCart('Chicken Biryani', 80)">Add to Cart &#128722</button>
             </div>
         </div>
         <div class="menu-card">
@@ -98,7 +98,7 @@
                 <h3 class="menusubt">Egg Biryani</h3>
                 <p>Delicious, Egg biryani.</p>
                 <p class="menu-price">₹80</p>
-                <p class="menu-price lunch">Queue:<span id="mnitm004">00</span></p>
+                <p class="menu-price lunch">Queue:<span id="mnitm006">00</span></p>
                 <button class="cart-btn btnlunch" onclick="addToCart('Egg Biryani', 80)">Add to Cart &#128722</button>
             </div>
         </div>
@@ -109,7 +109,7 @@
                 <h3 class="menusubt">Rice</h3>
                 <p>Steamed rice with curry.</p>
                 <p class="menu-price">₹50</p>
-                <p class="menu-price lunch">Queue:<span id="mnitm005">00</span></p>
+                <p class="menu-price lunch">Queue:<span id="mnitm007">00</span></p>
                 <button class="cart-btn btnlunch"  onclick="addToCart('Rice', 50)">Add to Cart &#128722</button>
             </div>
         </div>
@@ -124,7 +124,7 @@
                 <h3 class="menusubt">Pazampori</h3>
                 <p>Crispy Pazampori</p>
                 <p class="menu-price">₹10</p>
-                <p class="menu-price snacks">Queue:<span id="mnitm006">00</span></p>
+                <p class="menu-price snacks">Queue:<span id="mnitm008">00</span></p>
                 <button class="cart-btn btnsnacks" onclick="addToCart('Pazampori', 10)">Add to Cart &#128722</button>
             </div>
         </div>
@@ -134,18 +134,18 @@
                 <h3 class="menusubt">Bread Fry</h3>
                 <p>Delicious, Bread Fry</p>
                 <p class="menu-price">₹10</p>
-                <p class="menu-price snacks">Queue:<span id="mnitm007">00</span></p>
+                <p class="menu-price snacks">Queue:<span id="mnitm009">00</span></p>
                 <button class="cart-btn btnsnacks" onclick="addToCart('Bread Fry', 10)">Add to Cart &#128722</button>
             </div>
         </div>
 
         <div class="menu-card">
-            <img src="images/vada.jpg" alt="Rice">
+            <img src="images/vada.jpg" alt="Vada">
             <div class="menu-details">
                 <h3 class="menusubt">Vada</h3>
                 <p>Super Delicious Vada</p>
                 <p class="menu-price">₹15</p>
-                <p class="menu-price snacks">Queue:<span id="mnitm008">00</span></p>
+                <p class="menu-price snacks">Queue:<span id="mnitm010">00</span></p>
                 <button class="cart-btn btnsnacks" onclick="addToCart('Vada', 15)">Add to Cart &#128722</button>
             </div>
         </div>
@@ -153,12 +153,15 @@
 </section>
 
     <!-- Cart Section -->
-    <section class="cart-container">
-        <h2>Your Cart</h2>
+    <section class="cart-container" id="cart">
+        <h2 style="color:black">Your Cart</h2>
         <ul id="cart-list"></ul>
-        <p><strong>Total: ₹<span id="cart-total">0</span></strong></p>
+        <p style="color: black;" align="right"><strong>Total: ₹<span id="cart-total">0</span></strong></p>
         <button id="checkout-btn" onclick="checkout()" style="display: none;">Proceed to Checkout</button>
     </section>
+    <footer id="dev-footer" class="bot">
+        <p>Designed and Developed by <span id="dev-name">Mohammed Nihal</span>.&nbsp;&nbsp; Copyright &copy; 2025</p>
+    </footer>
     <script src="script.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {

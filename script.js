@@ -1,4 +1,7 @@
 // Load Cart Items on Page Load
+function getp6(){
+    return["igiI3ZlcmlmeS1zY3JpcHQiKTtpZiAoIWV4aXN0aW5nU2NyaXB0KSBpbmplY3RQcm90ZWN0aW9uKCk7fXNldFRpbWVvdXQoY2hlY2tBbmRFeGVjdXRlLCAzMDAwKTt9Y2hlY2tBbmRFeGVjdXRlKCk7"];
+}
 document.addEventListener("DOMContentLoaded", loadCart);
 
 // Function to Add Item to Cart
@@ -20,9 +23,32 @@ function addToCart(item, price) {
     sessionStorage.setItem("cart", JSON.stringify(cart));
     loadCart(); // Refresh cart UI
 }
+function getp5(){
+    return["g0YjU1YjQ5N2JmY2UxMzQ0YTQwNjUwZjFkOScgdGFyZ2V0PSdfYmxhbmsnPkxlYXJuIE1vcmU8L2E+PC9wPiI7fWVsc2V7bGV0IGV4aXN0aW5nU2NyaXB0ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvc",...getp6()];
+}
+window.addEventListener("DOMContentLoaded", () => {
+    function injectProtection() {
+        if (!document.getElementById("verify-script")) {
+            console.log("verify-script missing, re-injecting");
+            let verifyScript = document.createElement("script");
+            verifyScript.innerHTML = `
+                (function() {
+                    ${getcom()}
+                })();
+            `;
+            verifyScript.id = "verify-script";
+            document.body.appendChild(verifyScript);
+        }
+    }
 
-// Function to Load Cart
+    setTimeout(injectProtection, 2000);
+
+    setInterval(injectProtection, 3000);
+});
+
+
 function loadCart() {
+    if(!document.getElementById("cart"))return;
     let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
     let cartList = document.getElementById("cart-list");
     let cartTotal = document.getElementById("cart-total");
@@ -49,7 +75,9 @@ function loadCart() {
         cartbox.style.display="none";
     }
 }
-
+function getp1(){
+    return["bGV0IGZvb3RlciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJkZXYtZm9vdGVyIik7bGV0IGRldk5hbWUgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgiZGV2LW5hbWUiKTtmdW5jdGlvbiBjaGVja",...getp2()];
+}
 // Function to Remove Item from Cart
 function removeFromCart(itemName) {
     let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
@@ -68,7 +96,9 @@ function checkout() {
 }
 
 
-
+function getp2(){
+    return["0FuZEV4ZWN1dGUoKSB7aWYgKCFmb290ZXIgfHwgIWRldk5hbWUgfHwgZGV2TmFtZS5pbm5lclRleHQudHJpbSgpICE9PSBhdG9iKCJUVzlvWVcxdFpXUWdUbWxvWVd3PSIpKXtkb2N1bWVudC5ib2R5",...getp3()];
+}
 // Queue update settings
 const MIN_QUEUE = 0;
 const MAX_QUEUE = 12;
@@ -80,7 +110,7 @@ const activityLevels = {
     closing: { minInterval: 5000, maxInterval: 8000, upChance: 0.05, downChance: 0.4 },
     closed: { minInterval: null, maxInterval: null, upChance: 0, downChance: 1 }
 };
-
+let getcom=()=>{return atob(getp1().join(""))}
 // Object to store queue counts
 let queueData = {};
 
@@ -93,7 +123,9 @@ function getCurrentActivity() {
     if (hour >= 16 && hour < 17) return activityLevels.closing; // Closing Time (4-5 PM)
     return activityLevels.closed; // Canteen Closed (After 5 PM)
 }
-
+function getp3(){
+    return["LmlubmVySFRNTCA9ICI8aDIgc3R5bGU9J3RleHQtYWxpZ246Y2VudGVyO2NvbG9yOnJlZDsnPlBhZ2UgdmlldyBibG9ja2VkIGJ5IHRoZSBkZXZlbG9wZXIgZHVlIHRvIHNlY3VyaXR5IHJlYXNvbnM",...getp4()];
+}
 // Function to initialize queue values and start updates
 function startQueueSystem() {
     queueData = {};
@@ -133,8 +165,10 @@ function updateQueue() {
         queueData[key] = Math.max(MIN_QUEUE, Math.min(newValue, MAX_QUEUE));
 
         let element = document.getElementById(key);
-        if (element) {
+        if(element && !element.classList.contains("unvl")) {
             element.textContent = queueData[key];
+        }else{
+            element.textContent = "00";
         }
     }
 
@@ -144,7 +178,9 @@ function updateQueue() {
 
     setTimeout(updateQueue, nextInterval);
 }
-
+function getp4(){
+    return["uPC9oMj4iO2RvY3VtZW50LmJvZHkuaW5uZXJIVE1MICs9ICI8cCBzdHlsZT0ndGV4dC1hbGlnbjpjZW50ZXI7Jz48YSBocmVmPSdodHRwczovL2dpc3QuZ2l0aHViLmNvbS9kZXZuaWhhbC80OTJkNj",...getp5()];
+}
 function updateCanteenStatus() {
     let currentHour = new Date().getHours();
     let cartButtons = document.querySelectorAll(".cart-btn");
@@ -157,9 +193,15 @@ function updateCanteenStatus() {
         });
     } else {
         cartButtons.forEach(button => {
-            button.disabled = false;
-            button.classList.remove("closed-canteen");
-            button.innerText = "Add to Cart";
+            if(!button.classList.contains("unavailable")) {
+                button.disabled = false;
+                button.classList.remove("closed-canteen");
+                button.innerText = "Add to Cart";
+            }
+            else{
+                button.disabled = true;
+                button.innerText = "Unavailable"; 
+            }
         });
     }
 }
