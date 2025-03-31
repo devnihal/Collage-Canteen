@@ -241,9 +241,11 @@ body {
     margin-top: 70px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centers items horizontally */
+    justify-content: center;
     gap: 20px;
     padding: 20px;
+    height:auto;
+    min-height:calc(100dvh - 60px);
 }
 .gallery-container {
     display: flex;
