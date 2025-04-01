@@ -6,6 +6,10 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+a{
+    color: #0080ff;
+    text-decoration: none;
+}
 :root{
     overflow-x: hidden;
 }
