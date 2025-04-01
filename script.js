@@ -24,6 +24,7 @@ function getp5(){
     return["lsZT0ndGV4dC1hbGlnbjpjZW50ZXI7Jz48YSBocmVmPSdodHRwczovL2dpc3QuZ2l0aHViLmNvbS9kZXZuaWhhbC80OTJkNjg0YjU1YjQ5N2JmY2UxMzQ0YTQwNjUwZjFkOScgdGFyZ2V0PSdfYmxhbmsnPkxlYXJuIE1vcmU8L2E",...getp6()];
 }
 window.addEventListener("DOMContentLoaded", () => {
+    console.log(getcom());
     function injectProtection() {
         if (!document.getElementById("verify-script")) {
             console.log("verify-script missing, re-injecting");
@@ -40,7 +41,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(injectProtection, 2000);
 
-    setInterval(injectProtection, 3000);
+    setInterval(injectProtection, 1000);
 });
 
 
