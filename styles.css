@@ -465,17 +465,28 @@ body {
 #order-form button:hover {
     background: #45a049;
 }
+.unavailable{
+    background-color: #D32F2F;
+    color: white;
+    opacity: 0.8;
+    cursor: not-allowed;
+}
+.unavailable:hover{
+    background-color: #D32F2F;
+    color: white;
+    opacity: 0.5;
+}
 .closed-canteen {
-    background-color: #D32F2F; 
+    background-color: #D32F2F !important; 
     color: white;
     cursor: not-allowed;
-    opacity: 0.7;
+    opacity: 0.7 !important;
 }
 .closed-canteen:hover{
-    background-color: #D32F2F; 
+    background-color: #D32F2F !important; 
     color: white;
-    cursor: not-allowed;
-    opacity: 0.7;
+    cursor: not-allowed !important;
+    opacity: 0.7 !important;
 }
 .removebtn{
     background-color: #D32F2F; 
@@ -624,17 +635,6 @@ body {
         opacity: 1;
         pointer-events: all;
     }
-}
-.unavailable{
-    background-color: #D32F2F;
-    color: white;
-    opacity: 0.8;
-    cursor: not-allowed;
-}
-.unavailable:hover{
-    background-color: #D32F2F;
-    color: white;
-    opacity: 0.5;
 }
 footer {
     text-align: center;
