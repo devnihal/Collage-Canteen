@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<!-- Navigation Bar -->
 <nav class="navbar">
     <div class="logo">LBS Canteen</div>
     <div class="menu-icon" onclick="toggleMenu()">
@@ -23,14 +21,10 @@
         <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav>
-    <!-- Menu Header -->
     <header class="menu-header">
         <h1>Our Menu</h1>
     </header>
-<!-- Menu Section -->
 <section class="menu-container">
-
-    <!-- Beverages Section -->
     <h2 class="menu-title">Beverages</h2>
     <div class="menu-items">
         <div class="menu-card">
@@ -43,7 +37,6 @@
                 <button class="cart-btn btnbeverages" onclick="addToCart('Tea', 10)">Add to Cart &#128722</button>
             </div>
         </div>
-
         <div class="menu-card">
             <img src="images/coffee.jpg" alt="Coffee">
             <div class="menu-details">
@@ -55,7 +48,6 @@
             </div>
         </div>
     </div>
-    <!-- Breakfast Section -->
     <h2 class="menu-title">Breakfast</h2>
     <div class="menu-items">
         <div class="menu-card">
@@ -79,7 +71,6 @@
             </div>
         </div>
     </div>
-    <!-- Main Course Section -->
     <h2 class="menu-title">Lunch</h2>
     <div class="menu-items">
         <div class="menu-card">
@@ -102,7 +93,6 @@
                 <button class="cart-btn btnlunch" onclick="addToCart('Egg Biryani', 80)">Add to Cart &#128722</button>
             </div>
         </div>
-
         <div class="menu-card">
             <img src="images/rice.jpg" alt="Rice">
             <div class="menu-details">
@@ -114,8 +104,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Snacks Section -->
     <h2 class="menu-title">Snacks</h2>
     <div class="menu-items">
         <div class="menu-card">
@@ -138,7 +126,6 @@
                 <button class="cart-btn btnsnacks" onclick="addToCart('Bread Fry', 10)">Add to Cart &#128722</button>
             </div>
         </div>
-
         <div class="menu-card">
             <img src="images/vada.jpg" alt="Vada">
             <div class="menu-details">
@@ -151,8 +138,6 @@
         </div>
     </div>
 </section>
-
-    <!-- Cart Section -->
     <section class="cart-container" id="cart">
         <h2 style="color:black">Your Cart</h2>
         <ul id="cart-list"></ul>
@@ -177,7 +162,6 @@
             icon.classList.toggle("active");
         }
         
-        // Close menu when clicking outside
         document.addEventListener("click", function (event) {
             let menu = document.querySelector(".nav-links");
             let icon = document.querySelector(".menu-icon");

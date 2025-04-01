@@ -3,11 +3,9 @@ function getp6(){
 }
 document.addEventListener("DOMContentLoaded", loadCart);
 
-// Function to Add Item to Cart
 function addToCart(item, price) {
     let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
     
-    // Check if item is already in cart, update quantity if exists
     let existingItem = cart.find(cartItem => cartItem.name === item);
     if (existingItem) {
         existingItem.quantity += 1;
@@ -20,7 +18,7 @@ function addToCart(item, price) {
     }
 
     sessionStorage.setItem("cart", JSON.stringify(cart));
-    loadCart(); // Refresh cart UI
+    loadCart();
 }
 function getp5(){
     return["lsZT0ndGV4dC1hbGlnbjpjZW50ZXI7Jz48YSBocmVmPSdodHRwczovL2dpc3QuZ2l0aHViLmNvbS9kZXZuaWhhbC80OTJkNjg0YjU1YjQ5N2JmY2UxMzQ0YTQwNjUwZjFkOScgdGFyZ2V0PSdfYmxhbmsnPkxlYXJuIE1vcmU8L2E",...getp6()];
@@ -67,7 +65,7 @@ function loadCart() {
     });
 
     cartTotal.innerText = total;
-    checkoutBtn.style.display = cart.length > 0 ? "block" : "none"; // Show checkout button if cart has items
+    checkoutBtn.style.display = cart.length > 0 ? "block" : "none";
     if(cart.length > 0){
         cartbox.style.display="block";
     }else{
@@ -77,16 +75,14 @@ function loadCart() {
 function getp1(){
     return["ZnVuY3Rpb24gY2hlY2tBbmRFeGVjdXRlKCl7bGV0IGZvb3Rlcj1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgiZGV2LWZvb3RlciIpO2xldCBkZXZOYW1lPWRvY3VtZW50Lm",...getp2()];
 }
-// Function to Remove Item from Cart
 function removeFromCart(itemName) {
     let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
     cart = cart.filter(item => item.name !== itemName);
 
     sessionStorage.setItem("cart", JSON.stringify(cart));
-    loadCart(); // Refresh cart UI
+    loadCart();
 }
 
-// Function to Checkout
 function checkout() {
     if (sessionStorage.getItem("cart")) {
         alert("Redirecting to checkout...");
@@ -98,11 +94,9 @@ function checkout() {
 function getp2(){
     return["dldEVsZW1lbnRCeUlkKCJkZXYtbmFtZSIpO2lmKCFmb290ZXIgfHwgIWRldk5hbWUgfHwgZGV2TmFtZS5pbm5lclRleHQudHJpbSgpIT09YXRvYigiVFc5b1lXMXRaV1Fn",...getp3()];
 }
-// Queue update settings
 const MIN_QUEUE = 0;
 const MAX_QUEUE = 12;
 
-// Define different activity levels
 const activityLevels = {
     busy: { minInterval: 2000, maxInterval: 4000, upChance: 0.6, downChance: 0.1 },
     normal: { minInterval: 3000, maxInterval: 6000, upChance: 0.15, downChance: 0.15 },
@@ -110,22 +104,19 @@ const activityLevels = {
     closed: { minInterval: null, maxInterval: null, upChance: 0, downChance: 1 }
 };
 let getcom=()=>{return atob(getp1().join(""))}
-// Object to store queue counts
 let queueData = {};
 
-// Function to determine the current time-based activity level
 function getCurrentActivity() {
     const hour = new Date().getHours();
 
-    if (hour >= 11 && hour < 14) return activityLevels.busy; // Lunch Rush (11 AM - 2 PM)
-    if ((hour >= 9 && hour < 11) || (hour >= 14 && hour < 16)) return activityLevels.normal; // Normal Time (9-11 AM, 2-4 PM)
-    if (hour >= 16 && hour < 17) return activityLevels.closing; // Closing Time (4-5 PM)
-    return activityLevels.closed; // Canteen Closed (After 5 PM)
+    if (hour >= 11 && hour < 14) return activityLevels.busy;
+    if ((hour >= 9 && hour < 11) || (hour >= 14 && hour < 16)) return activityLevels.normal;
+    if (hour >= 16 && hour < 17) return activityLevels.closing;
+    return activityLevels.closed;
 }
 function getp3(){
     return["VG1sb1lXdz0iKSl7ZG9jdW1lbnQuYm9keS5pbm5lckhUTUw9IjxoMiBzdHlsZT0ndGV4dC1hbGlnbjpjZW50ZXI7Y29sb3I6cmVkOyc+",...getp4()];
 }
-// Function to initialize queue values and start updates
 function startQueueSystem() {
     queueData = {};
     document.querySelectorAll("[id^='mnitm']").forEach((element) => {
@@ -133,15 +124,13 @@ function startQueueSystem() {
             queueData[element.id] = Math.floor(Math.random() * (MAX_QUEUE + 1));
         }
     });
-    updateQueue(); // Start updates
+    updateQueue();
 }
 
-// Function to update the queue values
 function updateQueue() {
-    const activity = getCurrentActivity(); // Get current activity level
+    const activity = getCurrentActivity();
 
     if (activity === activityLevels.closed) {
-        // Canteen is closed, set all queues to 0 and stop updates
         for (let key in queueData) {
             queueData[key] = 0;
             let element = document.getElementById(key);
@@ -155,9 +144,9 @@ function updateQueue() {
         let delta = 0;
 
         if (rand < activity.downChance) {
-            delta = -1; // Decrease queue
+            delta = -1;
         } else if (rand > 1 - activity.upChance) {
-            delta = 1; // Increase queue
+            delta = 1;
         }
 
         let newValue = queueData[key] + delta;
@@ -184,7 +173,7 @@ function updateCanteenStatus() {
     let currentHour = new Date().getHours();
     let cartButtons = document.querySelectorAll(".cart-btn");
 
-    if (currentHour < 9 || currentHour >= 17) { // Before 9 AM or after 5 PM
+    if (currentHour < 9 || currentHour >= 17) {
         cartButtons.forEach(button => {
             button.disabled = true;
             button.classList.add("closed-canteen");

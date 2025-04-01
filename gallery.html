@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<!-- Navigation Bar -->
 <nav class="navbar">
     <div class="logo">LBS Canteen</div>
     <div class="menu-icon" onclick="toggleMenu()">
@@ -23,8 +21,6 @@
         <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav>
-
-    <!-- Gallery Section -->
     <section class="gallery">
         <h1 class="section-title">Our Speciality</h1>
         <div class="gallery-container">
@@ -67,7 +63,6 @@
             icon.classList.toggle("active");
         }
         
-        // Close menu when clicking outside
         document.addEventListener("click", function (event) {
             let menu = document.querySelector(".nav-links");
             let icon = document.querySelector(".menu-icon");

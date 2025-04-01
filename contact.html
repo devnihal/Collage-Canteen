@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<!-- Navigation Bar -->
 <nav class="navbar">
     <div class="logo">LBS Canteen</div>
     <div class="menu-icon" onclick="toggleMenu()">
@@ -23,13 +21,9 @@
         <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav>
-
-    <!-- Contact Section -->
     <section class="contact-container">
         <h2 style="margin-top: 70px;text-align:center;font-size:38px">Contact Us</h2>
-
         <div class="contact-wrapper">
-            <!-- Left Side: Contact Info + Working Hours (Stacked Vertically) -->
             <div class="contact-left">
                 <div class="contact-card">
                     <h3>📍 Get in Touch</h3>
@@ -37,7 +31,6 @@
                     <p><strong>Phone:</strong> +91 98765 43210</p>
                     <p><strong>Email:</strong> canteen@lbscek.ac.in</p>
                 </div>
-
                 <div class="contact-card">
                     <h3>⏰ Working Hours</h3>
                     <ul class="unul">
@@ -47,8 +40,6 @@
                     </ul>
                 </div>
             </div>
-
-            <!-- Right Side: Contact Form -->
             <div class="contact-right">
                 <h3>📩 Send Us a Message</h3>
                 <form>
@@ -59,7 +50,6 @@
                 </form>
             </div>
         </div>
-
     </section>
     <footer id="dev-footer">
         <p>Designed and Developed by <span id="dev-name">Mohammed Nihal</span>.&nbsp;&nbsp; Copyright &copy; 2025</p>
@@ -73,7 +63,6 @@
             icon.classList.toggle("active");
         }
         
-        // Close menu when clicking outside
         document.addEventListener("click", function (event) {
             let menu = document.querySelector(".nav-links");
             let icon = document.querySelector(".menu-icon");

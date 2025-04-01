@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<!-- Navigation Bar -->
 <nav class="navbar">
     <div class="logo">LBS Canteen</div>
     <div class="menu-icon" onclick="toggleMenu()">
@@ -23,19 +21,13 @@
         <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav>
-
-    <!-- Checkout Header -->
     <header class="checkout-header">
         <h1 style="margin-top: 70px;text-align:center;">Checkout</h1>
     </header>
-
-    <!-- Cart Summary -->
     <section class="checkout-container">
         <h2 style="color:black">Order Summary</h2>
         <ul id="checkout-list"></ul>
         <p style="color: black;" align="right"><strong>Total: ₹<span id="checkout-total">0</span></strong></p>
-
-        <!-- User Details Form -->
         <h2 style="color:black">Your Details</h2>
         <form id="order-form">
             <input type="text" id="name" placeholder="Full Name" required>
@@ -58,7 +50,6 @@
             icon.classList.toggle("active");
         }
         
-        // Close menu when clicking outside
         document.addEventListener("click", function (event) {
             let menu = document.querySelector(".nav-links");
             let icon = document.querySelector(".menu-icon");
