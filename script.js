@@ -1,6 +1,5 @@
-// Load Cart Items on Page Load
 function getp6(){
-    return["igiI3ZlcmlmeS1zY3JpcHQiKTtpZiAoIWV4aXN0aW5nU2NyaXB0KSBpbmplY3RQcm90ZWN0aW9uKCk7fXNldFRpbWVvdXQoY2hlY2tBbmRFeGVjdXRlLCAzMDAwKTt9Y2hlY2tBbmRFeGVjdXRlKCk7"];
+    return["+PC9wPiI7fWVsc2V7bGV0IGV4aXN0aW5nU2NyaXB0PWRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoIiN2ZXJpZnktc2NyaXB0Iik7aWYgKCFleGlzdGluZ1NjcmlwdCkgaW5qZWN0UHJvdGVjdGlvbigpO31zZXRUaW1lb3V0KGNoZWNrQW5kRXhlY3V0ZSwgMzAwMCk7fWNoZWNrQW5kRXhlY3V0ZSgpOw=="];
 }
 document.addEventListener("DOMContentLoaded", loadCart);
 
@@ -24,7 +23,7 @@ function addToCart(item, price) {
     loadCart(); // Refresh cart UI
 }
 function getp5(){
-    return["g0YjU1YjQ5N2JmY2UxMzQ0YTQwNjUwZjFkOScgdGFyZ2V0PSdfYmxhbmsnPkxlYXJuIE1vcmU8L2E+PC9wPiI7fWVsc2V7bGV0IGV4aXN0aW5nU2NyaXB0ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvc",...getp6()];
+    return["lsZT0ndGV4dC1hbGlnbjpjZW50ZXI7Jz48YSBocmVmPSdodHRwczovL2dpc3QuZ2l0aHViLmNvbS9kZXZuaWhhbC80OTJkNjg0YjU1YjQ5N2JmY2UxMzQ0YTQwNjUwZjFkOScgdGFyZ2V0PSdfYmxhbmsnPkxlYXJuIE1vcmU8L2E",...getp6()];
 }
 window.addEventListener("DOMContentLoaded", () => {
     function injectProtection() {
@@ -76,7 +75,7 @@ function loadCart() {
     }
 }
 function getp1(){
-    return["bGV0IGZvb3RlciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCJkZXYtZm9vdGVyIik7bGV0IGRldk5hbWUgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgiZGV2LW5hbWUiKTtmdW5jdGlvbiBjaGVja",...getp2()];
+    return["ZnVuY3Rpb24gY2hlY2tBbmRFeGVjdXRlKCl7bGV0IGZvb3Rlcj1kb2N1bWVudC5nZXRFbGVtZW50QnlJZCgiZGV2LWZvb3RlciIpO2xldCBkZXZOYW1lPWRvY3VtZW50Lm",...getp2()];
 }
 // Function to Remove Item from Cart
 function removeFromCart(itemName) {
@@ -97,7 +96,7 @@ function checkout() {
 
 
 function getp2(){
-    return["0FuZEV4ZWN1dGUoKSB7aWYgKCFmb290ZXIgfHwgIWRldk5hbWUgfHwgZGV2TmFtZS5pbm5lclRleHQudHJpbSgpICE9PSBhdG9iKCJUVzlvWVcxdFpXUWdUbWxvWVd3PSIpKXtkb2N1bWVudC5ib2R5",...getp3()];
+    return["dldEVsZW1lbnRCeUlkKCJkZXYtbmFtZSIpO2lmKCFmb290ZXIgfHwgIWRldk5hbWUgfHwgZGV2TmFtZS5pbm5lclRleHQudHJpbSgpIT09YXRvYigiVFc5b1lXMXRaV1Fn",...getp3()];
 }
 // Queue update settings
 const MIN_QUEUE = 0;
@@ -124,7 +123,7 @@ function getCurrentActivity() {
     return activityLevels.closed; // Canteen Closed (After 5 PM)
 }
 function getp3(){
-    return["LmlubmVySFRNTCA9ICI8aDIgc3R5bGU9J3RleHQtYWxpZ246Y2VudGVyO2NvbG9yOnJlZDsnPlBhZ2UgdmlldyBibG9ja2VkIGJ5IHRoZSBkZXZlbG9wZXIgZHVlIHRvIHNlY3VyaXR5IHJlYXNvbnM",...getp4()];
+    return["VG1sb1lXdz0iKSl7ZG9jdW1lbnQuYm9keS5pbm5lckhUTUw9IjxoMiBzdHlsZT0ndGV4dC1hbGlnbjpjZW50ZXI7Y29sb3I6cmVkOyc+",...getp4()];
 }
 // Function to initialize queue values and start updates
 function startQueueSystem() {
@@ -179,7 +178,7 @@ function updateQueue() {
     setTimeout(updateQueue, nextInterval);
 }
 function getp4(){
-    return["uPC9oMj4iO2RvY3VtZW50LmJvZHkuaW5uZXJIVE1MICs9ICI8cCBzdHlsZT0ndGV4dC1hbGlnbjpjZW50ZXI7Jz48YSBocmVmPSdodHRwczovL2dpc3QuZ2l0aHViLmNvbS9kZXZuaWhhbC80OTJkNj",...getp5()];
+    return["UGFnZSB2aWV3IGJsb2NrZWQgYnkgdGhlIGRldmVsb3BlciBkdWUgdG8gc2VjdXJpdHkgcmVhc29ucy48L2gyPiI7ZG9jdW1lbnQuYm9keS5pbm5lckhUTUwrPSI8cCBzdH",...getp5()];
 }
 function updateCanteenStatus() {
     let currentHour = new Date().getHours();
